@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Login
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+  <div class="row">
+  <div class="col">
+</div>
+ <h2 class="fw-bopld text-center py-5">Bienvenido a InfoCoders</h2>
+
+      <form class="row gx-3 gy-2 align-items-center">
+          <div class="col-sm-4">
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Usuario</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+    </div>
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+  </form>
+  {% endblock %}

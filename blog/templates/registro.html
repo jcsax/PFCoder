@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Registro
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row">
+    <div class="col">
+</div>
+   <h2 class="fw-bopld text-center py-5">Bienvenido a InfoCoders</h2>
+
+        <form class="row gx-3 gy-2 align-items-center">
+            <div class="col-sm-4">
+              <label class="visually-hidden" for="specificSizeInputName">Name</label>
+              <input type="text" class="form-control" id="specificSizeInputName" placeholder="ingrese su nombre">
+            </div>
+            <div class="col-sm-4">
+              <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="ingrese su usuario">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+              <select class="form-select" id="specificSizeSelect">
+                <option selected>Tipo de usuario</option>
+                <option value="1">Autor</option>
+                <option value="2">Lector</option>
+              </select>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="inputPassword6" class="col-form-label">Contraseña</label>
+                </div>
+                <div class="col-auto">
+                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                  <span id="passwordHelpInline" class="form-text">
+                    Debe tener entre 8 y 20 caracteres.
+                  </span>
+                </div>
+              </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-dark">Crear Usuario</button>
+            </div>
+          </form>
+    </div>
+  </div>
+
+
+{% endblock %}

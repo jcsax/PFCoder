@@ -27,7 +27,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="/Entretenimiento/">Sobre Entretenimiento</a></li>
                   <li><a class="dropdown-item" href="#">Sobre Salud</a></li>
-                  <li><a class="dropdown-item" href="#">Sobre Economía</a></li>
+                  <li><a class="dropdown-item" href='#'>Sobre Economía</a></li>
                 </ul>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Acerca de nosotros</a>
@@ -37,9 +37,18 @@
               <input class="form-control me-2" type="search" placeholder="Buscar noticias" aria-label="Search">
               <button class="btn btn-dark me-2" type="submit">Buscar</button>
             </form>
-            <button class="btn btn-dark me-2" type="submit">Ingresar</button>
-          </div>
-        </div>
+            <div class="btn-group dropstart">
+              <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropstart</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+              <a class="dropdown-item" href="/registro/">Registrarse</a>
+              </ul>
+              
+              <a type="button" class="btn btn-dark" href='/login'>
+                Ingresar
+              </a>
+            </div>
       </nav>
       {% block contenido %}
       {% endblock %}
