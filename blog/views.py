@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 from turtle import title
 from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Entretenimiento, Salud, Economia
 from blog.forms import Salud_form
+=======
+from multiprocessing import context
+from django.shortcuts import render
+from blog.models import Entretenimiento
+from blog.models import Salud
+>>>>>>> f1745d70431f24db16ad062a74d283400012f867
 # Create your views here.
 def publicar_entretenimiento(request):
     publi_entretenimiento = Entretenimiento.objects.all()
@@ -10,6 +17,7 @@ def publicar_entretenimiento(request):
     return render(request, 'publi_entretenimiento.html', context=context)
 
 def publicar_salud(request):
+<<<<<<< HEAD
     publi_salud = Salud.objects.all()
     context = {'publi_salud': publi_salud}
     return render(request, 'publi_salud.html', context=context)
@@ -41,3 +49,8 @@ def create_publi_salud(request):
 
 
 
+=======
+    publi_noticias_salud = Salud.objects.all()
+    context = {'publi_noticias_salud': publi_noticias_salud}
+    return render(request, 'publi_noticias_salud.html', )
+>>>>>>> f1745d70431f24db16ad062a74d283400012f867

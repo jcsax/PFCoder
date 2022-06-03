@@ -21,7 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('index/', index),
+<<<<<<< HEAD
     path('Noticias/', include('blog.urls')),
+=======
+    path('Entretenimiento/', include('blog.urls')),
+    path('Salud/', include('blog.urls')),
+>>>>>>> f1745d70431f24db16ad062a74d283400012f867
     path('registro/', registro),
     path('login/', login),
 ]
