@@ -6,12 +6,18 @@ Publicar Entretenimiento
 
 {% block contenido %}
 {% if form %}
+<div class="container">
+    <div class="row">
+    <div class="col">
+  </div>
+   <h2 class="fw-bopld text-center py-5">Publicar nota sobre Entretenimiento</h2>
     <form action="" method="POST" >
         {% csrf_token %}
         <table>
             {{form.as_table}}
         </table>
-        <input type="submit", value="Enviar!">
+        <br>
+        <input type="submit" class="btn btn-primary" value="Enviar">
     </form>
 {% elif new_publi_entretenimiento %}
 
