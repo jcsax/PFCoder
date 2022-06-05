@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from PFC.views import index, registro, login
+from PFC.views import index, registro, login, about_us
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('Noticias/', include('blog.urls')),
     path('registro/', registro),
     path('login/', login),
+    path('about_us/', about_us),
 ]

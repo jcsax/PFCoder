@@ -72,6 +72,3 @@ def create_publi_entretenimiento(request):
             )
             context ={'new_publi_entretenimiento':new_publi_entretenimiento}
         return render(request, 'create_publi_entretenimiento.html', context=context)
-
-
-
