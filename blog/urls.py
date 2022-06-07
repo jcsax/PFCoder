@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import publicar_economia, publicar_entretenimiento, publicar_salud, create_publi_salud, create_publi_entretenimiento, create_publi_economia
+from blog.views import publicar_economia, publicar_entretenimiento, publicar_salud, create_publi_salud, create_publi_entretenimiento, create_publi_economia, Buscar_Noticias_views
 
 urlpatterns = [
     path('Entretenimiento/', publicar_entretenimiento, name = 'publi_entretenimiento'),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('create-publi-salud/', create_publi_salud, name = 'create-publi-salud'),
     path('create-publi-entretenimiento/', create_publi_entretenimiento, name = 'create-publi-entretenimiento'),
     path('create-publi-economia/', create_publi_economia, name = 'create-publi-economia'),
+    path('Buscar_Noticias/', Buscar_Noticias_views, name = 'Buscar_Noticias')
     ]

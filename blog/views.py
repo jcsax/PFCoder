@@ -24,7 +24,7 @@ def create_publi_salud(request):
         form = Salud_form()
         context = {'form':form}
         return render(request, 'create_publi_salud.html', context=context)
-    elif request.method == 'POST':
+    else:
         form = Salud_form(request.POST)
         if form.is_valid():
             new_publi_salud = Salud.objects.create(
@@ -32,18 +32,17 @@ def create_publi_salud(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_salud':new_publi_salud}
-        else:
-            context ={'errors': form.errors}
-    return render(request, 'create_publi_salud.html', context=context)
+        return render(request, 'create_publi_salud.html', context=context)
 
 def create_publi_economia(request):
     if request.method == 'GET':
         form = Economia_form()
         context = {'form':form}
         return render(request, 'create_publi_economia.html', context=context)
-    elif request.method == 'POST':
+    else:
         form = Economia_form(request.POST)
         if form.is_valid():
             new_publi_economia = Economia.objects.create(
@@ -51,18 +50,17 @@ def create_publi_economia(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_economia':new_publi_economia}
-        else:
-            context ={'errors': form.errors}
-    return render(request, 'create_publi_economia.html', context=context)
+        return render(request, 'create_publi_economia.html', context=context)
 
 def create_publi_entretenimiento(request):
     if request.method == 'GET':
         form = Entretenimiento_form()
         context = {'form':form}
         return render(request, 'create_publi_entretenimiento.html', context=context)
-    elif request.method == 'POST':
+    else:
         form = Entretenimiento_form(request.POST)
         if form.is_valid():
             new_publi_entretenimiento = Entretenimiento.objects.create(
@@ -70,8 +68,19 @@ def create_publi_entretenimiento(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_entretenimiento':new_publi_entretenimiento}
-        else:
-            context = {'errors': form.errors}
-    return render(request, 'create_publi_entretenimiento.html', context=context)
+        return render(request, 'create_publi_entretenimiento.html', context=context)
+
+def Buscar_Noticias_views(request):
+    print(request.GET)
+    Entretenimiento_buscar = Entretenimiento.objects.filter(title__icontains = request.GET['search'])
+    Salud_buscar = Salud.objects.filter(title__icontains = request.GET['search'])
+    Economia_buscar = Economia.objects.filter(title__icontains = request.GET['search'])
+    context = {'Entretenimiento_buscar': Entretenimiento, 'Salud_buscar': Salud, 'Economia_buscar': Economia}
+    return render(request, 'buscar_noticias.html', context = context)
+
+
+
+
