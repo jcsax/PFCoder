@@ -17,16 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from PFC.views import index, registro, login, about_us
+from PFC.views import index, sign_in, login, about_us
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('index/', index),
     path('Noticias/', include('blog.urls')),
-    path('registro/', registro),
+    path('sign-in/', sign_in),
     path('login/', login),
-    path('about_us/', about_us),
+    path('about-us/', about_us),
 ]
 
 if settings.DEBUG:

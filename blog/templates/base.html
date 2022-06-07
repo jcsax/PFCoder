@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        {% block titulo %}
+        {% block title %}
         {% endblock %}
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -34,15 +34,15 @@
                     Crear
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/Noticias/create-publi-entretenimiento/">Crear nota entretenimiento</a></li>
-                    <li><a class="dropdown-item" href="/Noticias/create-publi-salud/">Crear nota salud</a></li>
-                    <li><a class="dropdown-item" href='/Noticias/create-publi-economia/'>Crear nota economía</a></li>
+                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Entretenimiento/">Crear nota entretenimiento</a></li>
+                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Salud/">Crear nota salud</a></li>
+                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Economia/">Crear nota economía</a></li>
                   </ul>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about_us/">Acerca de nosotros</a>
+                    <a class="nav-link" href="/about-us/">Acerca de nosotros</a>
                   </li>
     </ul>
-    <form class="d-flex" role="search" action="/Noticias/Buscar_Noticias/" metod= "GET">
+    <form class="d-flex" role="search" action="/Noticias/Buscar/" metod= "GET">
     <input class="form-control me-2" type = "text" placeholder = "Buscar noticias" name = 'search' aria-label = "Search">
     <button class="btn btn-dark me-2" type="submit">Buscar</button>
   </form>
@@ -52,7 +52,7 @@
                 <span class="visually-hidden">Toggle Dropstart</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-              <a class="dropdown-item" href="/registro/">Registrarse</a>
+              <a class="dropdown-item" href="/sign-in/">Registrarse</a>
               </ul>
               
               <a type="button" class="btn btn-dark" href='/login'>
@@ -60,7 +60,7 @@
               </a>
             </div>
       </nav>
-      {% block contenido %}
+      {% block content %}
       {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% block titulo %}
-Publicar Entretenimiento
+{% block title %}
+Publicar Salud
 {% endblock %}
 
-{% block contenido %}
+{% block content %}
 {% if form %}
 <div class="container">
     <div class="row">
     <div class="col">
   </div>
-   <h2 class="fw-bopld text-center py-5">Publicar nota sobre Entretenimiento</h2>
+   <h2 class="fw-bopld text-center py-5">Publicar nota sobre Salud</h2>
     <form action="" method="POST" >
         {% csrf_token %}
         <table>
@@ -19,13 +19,13 @@ Publicar Entretenimiento
         <br>
         <input type="submit" class="btn btn-primary" value="Enviar">
     </form>
-{% elif new_publi_entretenimiento %}
+{% elif new_post_health %}
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{new_publi_entretenimiento.title}}</h5>
-            <p class="card-text">{{new_publi_entretenimiento.author}}</p>
-            <p class="card-text">{{new_publi_entretenimiento.text}}</p>
+            <h5 class="card-title">{{new_post_health.title}}</h5>
+            <p class="card-text">{{new_post_health.author}}</p>
+            <p class="card-text">{{new_post_health.text}}</p>
         </div>
     </div>
 

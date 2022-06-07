@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
-{% block titulo %}
+{% block title %}
 Entretenimiento
 {% endblock %}
 
-{% block contenido %}
+{% block content %}
 <br><br><br>
 <h1 
 class="fw-bopld text-center py-5">
 Aca van noticias sobre Entretenimiento.
 </h1>
-{% for notas in publi_entretenimiento %}
+{% for note in post_entertainment %}
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{notas.title}}</h5>
-          <p class="card-text">{{notas.text}}</p>
-          <p class="card-text"><small class="text-muted">Autor: {{notas.author}}</small></p>
+          <h5 class="card-title">{{note.title}}</h5>
+          <p class="card-text">{{note.text}}</p>
+          <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
         </div>
       </div>
     </div>

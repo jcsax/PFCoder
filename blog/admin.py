@@ -1,7 +1,7 @@
 from django.contrib import admin
-from blog.models import Economia, Entretenimiento, Salud
+from blog.models import Economy, Entertainment, Health
 # Register your models here.
 
-admin.site.register(Entretenimiento)
-admin.site.register(Economia)
-admin.site.register(Salud)
+admin.site.register(Entertainment)
+admin.site.register(Economy)
+admin.site.register(Health)

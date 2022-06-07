@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block titulo %}
+{% block title %}
 Publicar Economia
 {% endblock %}
 
-{% block contenido %}
+{% block content %}
 {% if form %}
 <div class="container">
     <div class="row">
@@ -19,13 +19,13 @@ Publicar Economia
         <br>
         <input type="submit" class="btn btn-primary" value="Enviar">
     </form>
-{% elif new_publi_economia %}
+{% elif new_post_economy %}
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{new_publi_economia.title}}</h5>
-            <p class="card-text">{{new_publi_economia.author}}</p>
-            <p class="card-text">{{new_publi_economia.text}}</p>
+            <h5 class="card-title">{{new_post_economy.title}}</h5>
+            <p class="card-text">{{new_post_economy.author}}</p>
+            <p class="card-text">{{new_post_economy.text}}</p>
         </div>
     </div>
 

@@ -1,12 +1,12 @@
 from django.urls import path
-from blog.views import publicar_economia, publicar_entretenimiento, publicar_salud, create_publi_salud, create_publi_entretenimiento, create_publi_economia, Buscar_Noticias_views
+from blog.views import post_economy, post_entertainment, post_health, create_post_health, create_post_entertainment, create_post_economy, search_note
 
 urlpatterns = [
-    path('Entretenimiento/', publicar_entretenimiento, name = 'publi_entretenimiento'),
-    path('Economia/', publicar_economia, name = 'publi_economia'),
-    path('Salud/', publicar_salud, name = 'publi_salud'),
-    path('create-publi-salud/', create_publi_salud, name = 'create-publi-salud'),
-    path('create-publi-entretenimiento/', create_publi_entretenimiento, name = 'create-publi-entretenimiento'),
-    path('create-publi-economia/', create_publi_economia, name = 'create-publi-economia'),
-    path('Buscar_Noticias/', Buscar_Noticias_views, name = 'Buscar_Noticias'),
+    path('Entretenimiento/', post_entertainment, name = 'post_entertainment'),
+    path('Economia/', post_economy, name = 'post_economy'),
+    path('Salud/', post_health, name = 'post_heatlh'),
+    path('Crear-Nota-Salud/', create_post_health, name = 'new_post_health'),
+    path('Crear-Nota-Entretenimiento/', create_post_entertainment, name = 'new_post_entertainment'),
+    path('Crear-Nota-Economia/', create_post_economy, name = 'new_post_economy'),
+    path('Buscar/', search_note, name = 'search_note'),
     ]
