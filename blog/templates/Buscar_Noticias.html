@@ -5,11 +5,54 @@ Resultado de busqueda
 {% endblock %}
 
 {% block contenido %}
-{% if form %}
-</ul>
-<form class="from-inline my-2 my-lg-0" action="/Noticias/Buscar_Noticias/" method="GET">
-    <input class="form-control mr-sm-2" type="text" placeholder="Buscar noticias" name="search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm.0" type="sumbit"> Buscar Noticias!</button>
-</form>
-{% endif %}
+<br><br><br>
+<h1 
+class="fw-bopld text-center py-5">
+Noticias encontradas
+</h1>
+<div>
+      {% for notas in entretenimiento %}
+      <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{notas.title}}</h5>
+                <p class="card-text">{{notas.text}}</p>
+                <p class="card-text"><small class="text-muted">Autor: {{notas.author}}</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% for notas in economia %}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{notas.title}}</h5>
+                  <p class="card-text">{{notas.text}}</p>
+                  <p class="card-text"><small class="text-muted">Autor: {{notas.author}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% for notas in salud %}
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{notas.title}}</h5>
+                    <p class="card-text">{{notas.text}}</p>
+                    <p class="card-text"><small class="text-muted">Autor: {{notas.author}}</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+</div>  
+    
 {% endblock %}

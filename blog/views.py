@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Entretenimiento, Salud, Economia
 from blog.forms import Economia_form, Salud_form, Entretenimiento_form
+
 # Create your views here.
 def publicar_entretenimiento(request):
     publi_entretenimiento = Entretenimiento.objects.all()
@@ -32,7 +33,6 @@ def create_publi_salud(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_salud':new_publi_salud}
         return render(request, 'create_publi_salud.html', context=context)
@@ -50,7 +50,6 @@ def create_publi_economia(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_economia':new_publi_economia}
         return render(request, 'create_publi_economia.html', context=context)
@@ -68,19 +67,14 @@ def create_publi_entretenimiento(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                pic = form.cleaned_data['pic'],
             )
             context ={'new_publi_entretenimiento':new_publi_entretenimiento}
         return render(request, 'create_publi_entretenimiento.html', context=context)
 
 def Buscar_Noticias_views(request):
     print(request.GET)
-    Entretenimiento_buscar = Entretenimiento.objects.filter(title__icontains = request.GET['search'])
-    Salud_buscar = Salud.objects.filter(title__icontains = request.GET['search'])
-    Economia_buscar = Economia.objects.filter(title__icontains = request.GET['search'])
-    context = {'Entretenimiento_buscar': Entretenimiento, 'Salud_buscar': Salud, 'Economia_buscar': Economia}
-    return render(request, 'buscar_noticias.html', context = context)
-
-
-
-
+    entretenimiento = Entretenimiento.objects.filter(title__icontains = request.GET['search'])
+    economia = Economia.objects.filter(title__icontains = request.GET['search'])
+    salud = Salud.objects.filter(title__icontains = request.GET['search'])
+    context = {'entretenimiento': entretenimiento, 'economia': economia,'salud':salud}
+    return render(request, 'Buscar_Noticias.html', context = context)
