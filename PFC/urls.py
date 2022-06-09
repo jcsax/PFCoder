@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from PFC.views import index, sign_in, login, about_us
+from PFC.views import index, sign_in, login, about_us, login_view, logout_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,8 +25,11 @@ urlpatterns = [
     path('index/', index),
     path('Noticias/', include('blog.urls')),
     path('sign-in/', sign_in),
-    path('login/', login),
     path('about-us/', about_us),
+    
+    path('login/', login_view, name = 'login'),
+    path('logout/', logout_view, name = 'logout'),
+    path('register/', register_view, name = 'register'),
 ]
 
 if settings.DEBUG:
