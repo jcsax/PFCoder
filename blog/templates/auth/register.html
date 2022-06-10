@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
-{% block titulo %}
+{% block title %}
 Registro
 {% endblock %}
 
-{% block contenido %}
-
-    <h2 style="margin-left:30rem">Complete los campos para registrarse</h2>
+{% block content %}
+    <h2 style="margin-left:30rem">Complete los campos para Registrarse</h2>
     <h3>{{errors}}</h3>
     <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
         {% csrf_token %}
@@ -15,5 +14,5 @@ Registro
         </table>
         <input type="submit", value="Ingresar">
     </form>
-
+    
 {% endblock %}

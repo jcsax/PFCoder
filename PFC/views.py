@@ -2,12 +2,12 @@ from datetime import datetime
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
-
 from PFC.forms import User_registration_form
+
 
 def index(request):
     print(request.user)
@@ -48,7 +48,6 @@ def login_view(request):
         context = {'form':form}
         return render(request, 'auth/login.html', context = context)
 
-
 def register_view(request):
     if request.method == 'POST':
         form = User_registration_form(request.POST)
@@ -70,8 +69,6 @@ def register_view(request):
         form = User_registration_form()
         context = {'form':form}
         return render(request, 'auth/register.html', context =context)
-
-
 
 def logout_view(request):
     logout(request)

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from PFC.views import index, sign_in, login, about_us, login_view, logout_view, register_view
+from PFC.views import index, sign_in, about_us, login_view, logout_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),

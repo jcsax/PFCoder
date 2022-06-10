@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Entertainment, Health, Economy
 from blog.forms import Economy_form, Health_form, Entertainment_form
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def post_entertainment(request):
@@ -20,6 +21,7 @@ def post_economy(request):
     context = {'post_economy': post_economy}
     return render(request, 'post_economy.html', context=context)
 
+@login_required
 def create_post_health(request):
     if request.method == 'GET':
         form = Health_form()
@@ -37,6 +39,7 @@ def create_post_health(request):
             context ={'new_post_health':new_post_health}
         return render(request, 'create_post_health.html', context=context)
 
+@login_required
 def create_post_economy(request):
     if request.method == 'GET':
         form = Economy_form()
@@ -54,6 +57,7 @@ def create_post_economy(request):
             context ={'new_post_economy':new_post_economy}
         return render(request, 'create_post_economy.html', context=context)
 
+@login_required
 def create_post_entertainment(request):
     if request.method == 'GET':
         form = Entertainment_form()
