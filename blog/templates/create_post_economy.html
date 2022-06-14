@@ -11,7 +11,7 @@ Publicar Economia
     <div class="col">
   </div>
    <h2 class="fw-bopld text-center py-5">Publicar nota sobre Economia</h2>
-    <form action="" method="POST" >
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{form.as_table}}

@@ -28,15 +28,21 @@ def create_post_health(request):
         context = {'form':form}
         return render(request, 'create_post_health.html', context=context)
     else:
-        form = Health_form(request.POST)
+        form = Health_form(request.POST, request.FILES)
+        
         if form.is_valid():
             new_post_health = Health.objects.create(
                 title = form.cleaned_data['title'],
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                note_image = form.cleaned_data['note_image']
             )
             context ={'new_post_health':new_post_health}
+        else:
+            context = {'errors':form.errors}
+            return render(request, 'create_post_healt.html', context = context)
+
         return render(request, 'create_post_health.html', context=context)
 
 @login_required
@@ -46,15 +52,20 @@ def create_post_economy(request):
         context = {'form':form}
         return render(request, 'create_post_economy.html', context=context)
     else:
-        form = Economy_form(request.POST)
+        form = Economy_form(request.POST, request.FILES)
         if form.is_valid():
             new_post_economy = Economy.objects.create(
                 title = form.cleaned_data['title'],
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                note_image = form.cleaned_data['note_image']
             )
             context ={'new_post_economy':new_post_economy}
+        
+        else:
+            context = {'errors':form.errors}
+            return render(request, 'create_post_economy.html', context = context)
         return render(request, 'create_post_economy.html', context=context)
 
 @login_required
@@ -64,15 +75,19 @@ def create_post_entertainment(request):
         context = {'form':form}
         return render(request, 'create_post_entertainment.html', context=context)
     else:
-        form = Entertainment_form(request.POST)
+        form = Entertainment_form(request.POST, request.FILES)
         if form.is_valid():
             new_post_entertainment = Entertainment.objects.create(
                 title = form.cleaned_data['title'],
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
+                note_image = form.cleaned_data['note_image']
             )
             context ={'new_post_entertainment':new_post_entertainment}
+        else:
+            context = {'errors':form.errors}
+            return render(request, 'create_post_entertainment.html', context = context)
         return render(request, 'create_post_entertainment', context=context)
 
 def search_note(request):
