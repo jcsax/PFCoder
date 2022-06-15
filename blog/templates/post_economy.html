@@ -31,8 +31,8 @@ Aca van noticias sobre Economia.
     {% for note in post_economy %}
       <div class="col mb-5">
           <div class="card h-100">
-            {% if product.image %}
-              <img class="card-img-top" src="{{note.note_image.url}}"/>
+            {% if note.image %}
+              <img src="{{note.image.url}}" class="card-img-top"/>
               {% endif %}
               <div class="card-body p-4">
                   <div class="text-center">

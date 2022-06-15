@@ -1,4 +1,7 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 from blog.views import post_economy, post_entertainment, post_health, create_post_health, create_post_entertainment, create_post_economy, search_note
 
 urlpatterns = [
@@ -9,4 +12,4 @@ urlpatterns = [
     path('Crear-Nota-Entretenimiento/', create_post_entertainment, name = 'new_post_entertainment'),
     path('Crear-Nota-Economia/', create_post_economy, name = 'new_post_economy'),
     path('Buscar/', search_note, name = 'search_note'),
-    ]
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

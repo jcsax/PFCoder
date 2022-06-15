@@ -17,20 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from PFC.views import index, sign_in, about_us, login_view, logout_view, register_view
+from PFC.views import index, about_us, login_view, logout_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('index/', index),
     path('Noticias/', include('blog.urls')),
-    path('sign-in/', sign_in),
     path('about-us/', about_us),
     
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
     path('register/', register_view, name = 'register'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -15,8 +15,8 @@ Aca van noticias sobre Salud.
     {% for note in post_health %}
       <div class="col mb-5">
           <div class="card h-100">
-            {% if product.image %}
-              <img class="card-img-top" src="{{note.note_image.url}}"/>
+            {% if note.image %}
+              <img class="card-img-top" src="{{note.image.url}}"/>
               {% endif %}
               <div class="card-body p-4">
                   <div class="text-center">

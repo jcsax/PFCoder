@@ -36,7 +36,7 @@ def create_post_health(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                note_image = form.cleaned_data['note_image']
+                image = form.cleaned_data['image']
             )
             context ={'new_post_health':new_post_health}
         else:
@@ -59,7 +59,7 @@ def create_post_economy(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                note_image = form.cleaned_data['note_image']
+                image = form.cleaned_data['image']
             )
             context ={'new_post_economy':new_post_economy}
         
@@ -82,13 +82,13 @@ def create_post_entertainment(request):
                 author = form.cleaned_data['author'],
                 publish_date = form.cleaned_data['publish_date'],
                 text = form.cleaned_data['text'],
-                note_image = form.cleaned_data['note_image']
+                image = form.cleaned_data['image']
             )
             context ={'new_post_entertainment':new_post_entertainment}
         else:
             context = {'errors':form.errors}
             return render(request, 'create_post_entertainment.html', context = context)
-        return render(request, 'create_post_entertainment', context=context)
+        return render(request, 'create_post_entertainment.html', context=context)
 
 def search_note(request):
     print(request.GET)
