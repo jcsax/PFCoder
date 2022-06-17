@@ -8,7 +8,6 @@ Economia
 <br><br><br>
 <h1 
 class="fw-bopld text-center py-5">
-Aca van noticias sobre Economia.
 </h1>
 <!-- {% for note in post_economy %}
 <div class="card mb-3" style="max-width: 540px;">
@@ -26,19 +25,19 @@ Aca van noticias sobre Economia.
   {% endfor %} -->
 
 
-<div class="container px-4 px-lg-5 mt-5">
+<div class="container px-8 px-lg-5 mt-5">
   <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     {% for note in post_economy %}
       <div class="col mb-5">
-          <div class="card h-100">
+          <div class="card h-120">
             {% if note.image %}
               <img src="{{note.image.url}}" class="card-img-top"/>
               {% endif %}
-              <div class="card-body p-4">
-                  <div class="text-center">
+              <div class="card-body p-6">
+                  <div class="text-center py-9">
                       <h3><class="fw-bolder">{{note.title}}<br></h3>
                       <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
-                      <h5>{{note.text}}</h5>
+                      <h6>{{note.text}}</h6>
                       <br>
                       <a href="#" class="btn btn-secondary">Ver más</a>
                   </div>
