@@ -1,5 +1,5 @@
 from django import forms
-from blog.models import Health, Entertainment, Economy
+from blog.models import Health, Entertainment, Economy, Sports
 
 class Health_form(forms.ModelForm):
     class Meta:
@@ -16,3 +16,7 @@ class Entertainment_form(forms.ModelForm):
         model = Entertainment
         fields = '__all__'
 
+class Sports_form(forms.ModelForm):
+    class Meta:
+        model = Sports
+        fields = '__all__'

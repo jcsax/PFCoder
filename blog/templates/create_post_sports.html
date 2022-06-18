@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Publicar Deportes
+{% endblock %}
+
+{% block content %}
+{% if form %}
+<div class="container">
+    <div class="row">
+    <div class="col">
+  </div>
+   <h2 class="fw-bopld text-center py-5">Publicar nota sobre Deportes</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" class="btn btn-secondary" value="Enviar">
+    </form>
+{% elif new_post_sports %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{new_post_sports.title}}</h5>
+            <p class="card-text">{{new_post_sports.author}}</p>
+            <p class="card-text">{{new_post_sports.text}}</p>
+        </div>
+    </div>
+
+{% endif %}
+
+{% endblock %}

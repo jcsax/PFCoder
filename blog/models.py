@@ -37,3 +37,15 @@ class Health(models.Model):
     class Meta:
         verbose_name = 'Salud'
         verbose_name_plural = 'Salud'
+
+class Sports(models.Model):
+    title = models.CharField(max_length=100)
+    #subtitle = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+    publish_date = models.DateField(default=now)
+    text = models.TextField(blank=True)
+    image = models.ImageField(upload_to='Sports_image', blank = True, null = True)
+    class Meta:
+        verbose_name = 'Deporte'
+        verbose_name_plural = 'Deportes'
+
