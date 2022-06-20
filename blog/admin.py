@@ -1,6 +1,7 @@
 from msilib.schema import Class
 from django.contrib import admin
 from blog.models import Economy, Entertainment, Health, Sports
+
 # Register your models here.
 
 class EntretainmentAdmin(admin.ModelAdmin):
