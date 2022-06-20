@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Base de datos
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+{% for note in bd_view %}
+    <h3><class="fw-bolder">{{note.title}}<br></h3>
+    <p>Autor: {{note.author}}</small></p>
+    <p>Nota: {{note.text}}</p>
+    <a>Ver más</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  {% endblock %}

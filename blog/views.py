@@ -26,7 +26,6 @@ def post_sports(request):
     context = {'post_sport': post_sports}
     return render(request, 'post_sports.html', context=context)
 
-
 @login_required
 def create_post_health(request):
     if request.method == 'GET':
