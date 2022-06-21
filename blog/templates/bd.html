@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Base de datos
+Noticias
 {% endblock %}
 
 {% block content %}
 <br><br><br>
-{% for note in bd_view %}
-    <h3><class="fw-bolder">{{note.title}}<br></h3>
-    <p>Autor: {{note.author}}</small></p>
-    <p>Nota: {{note.text}}</p>
-    <a>Ver más</a>
+{{message}}
+<h1 
+class="fw-bopld text-center py-5"> Todas las Noticias
+</h1>
+<div class="container px-8 px-lg-7 mt-5">
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    {% for note in object_list %}
+      <div class="col mb-5">
+          <div class="card h-120">
+              <div class="card-body p-6">
+                  <div class="text-center">
+                      <h3><class="fw-bolder">{{note.title}}<br></h3>
+                      <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
+                      <br>
+                      <a href="/Noticias/Leer-Noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
-    </div>
-    </div>
-    </div>
-    {% endfor %}
     <br>
     <br>
     <br>

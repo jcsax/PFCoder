@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Borrar Noticia
+{% endblock %}
+
+{% block content %}
+<h2 class="fw-bopld text-center py-5">Borrar Noticia </h2>
+<form method = "POST">
+    {% csrf_token %}
+<div class="container px-8 px-lg-5 mt-5">
+        <div class="col mb-5">
+            <div class="card h-120">
+                <div class="card-body p-6">
+                    <div class="text-center py-9">
+                        <h3 class="fw-bolder">{{object.title}}<br></h3>
+                        <p class="card-text">Estas por eliminar la nota, estas seguro?</h4></p></small></p>
+                        <br>
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        <a class="btn btn-secondary" href = "/Noticias/">Cancelar</a>
+                </form>
+                </div>
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

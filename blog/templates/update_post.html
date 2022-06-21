@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Actualizar Nota
+{% endblock %}
+
+{% block content %}
+
+    {% if form %}
+        <h2 class="fw-bopld text-center py-5">Complete los campos a actualizar</h2>
+        <div class="container px-8 px-lg-7 mt-5">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <br>
+
+            <input class="btn btn-primary" type="submit" , value="Editar">
+            <a class="btn btn-secondary" href = "/Noticias/">Cancelar</a>
+        </form>
+    </div>
+</div>
+    {% endif %}
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

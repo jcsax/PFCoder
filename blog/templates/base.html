@@ -35,16 +35,11 @@
                   <li><a class="dropdown-item" href='/Noticias/Economia/'>Sobre Economía</a></li>
                   <li><a class="dropdown-item" href='/Noticias/Deportes/'>Sobre Deportes</a></li>
                 </ul>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                    Publicar
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Entretenimiento/">Crear nota entretenimiento</a></li>
-                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Salud/">Crear nota salud</a></li>
-                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Economia/">Crear nota economía</a></li>
-                    <li><a class="dropdown-item" href="/Noticias/Crear-Nota-Deportes/">Crear nota Deportes</a></li>
-                  </ul>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/Noticias/Crear-Nota/">Publicar</a>
+                </li>
+                {% endif %}
                   <li class="nav-item">
                     <a class="nav-link" href="/about-us/">Acerca de nosotros</a>
                   </li>
@@ -60,10 +55,10 @@
                           <img src="{{request.user.user_profile.image.url}}" style="height: 2rem;">
                       </li>
                         <li class="nav-item">
-                            <a class="btn btn-secondary" href="/logout/">Logout</a>
+                            <a class="btn btn-secondary me-2" href="/logout/">Logout</a>
                         </li>
                         <li class="nav-item">
-                          <a class="btn btn-secondary" href="/bd/">Base de noticias</a>
+                          <a class="btn btn-secondary" href="/Noticias/">Todas las Noticias</a>
                       </li>
                         {% else %}
                         <li class="nav-item">

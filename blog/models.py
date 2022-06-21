@@ -3,49 +3,28 @@ from django.db import models
 from django.utils.timezone import now
 # Create your models here.
 
-class Entertainment(models.Model):
+class Note(models.Model):
     title = models.CharField(max_length=100, blank=True, null=True)
-    #subtitle = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     publish_date = models.DateField(default=now)
     text = models.TextField(blank=True)
-    image = models.ImageField(upload_to='Entertainment_image', blank = True, null = True)
+    category = models.ForeignKey('Categoria', on_delete=models.CASCADE, related_name='blog')
+    image = models.ImageField(upload_to='note_image', blank = True, null = True)
+
 
     class Meta:
-        verbose_name = 'Entretenimiento'
-        verbose_name_plural = 'Entretenimiento'
+        verbose_name = 'Nota'
+        verbose_name_plural = 'Notas'
+    def __str__(self):
+        return self.name
 
+class Categoria(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=100)
 
-class Economy(models.Model):
-    title = models.CharField(max_length=100)
-    #subtitle = models.CharField(max_length=100)
-    author = models.CharField(max_length=50)
-    publish_date = models.DateField(default=now)
-    text = models.TextField(blank=True)
-    image = models.ImageField(upload_to='Economy_image', blank = True, null = True)
     class Meta:
-        verbose_name = 'Economia'
-        verbose_name_plural = 'Economia'
-
-class Health(models.Model):
-    title = models.CharField(max_length=100)
-    #subtitle = models.CharField(max_length=100)
-    author = models.CharField(max_length=50)
-    publish_date = models.DateField(default=now)
-    text = models.TextField(blank=True)
-    image = models.ImageField(upload_to='Healt_image', blank = True, null = True)
-    class Meta:
-        verbose_name = 'Salud'
-        verbose_name_plural = 'Salud'
-
-class Sports(models.Model):
-    title = models.CharField(max_length=100)
-    #subtitle = models.CharField(max_length=100)
-    author = models.CharField(max_length=50)
-    publish_date = models.DateField(default=now)
-    text = models.TextField(blank=True)
-    image = models.ImageField(upload_to='Sports_image', blank = True, null = True)
-    class Meta:
-        verbose_name = 'Deporte'
-        verbose_name_plural = 'Deportes'
-
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorias'
+    def __str__(self):
+        return self.name

@@ -1,17 +1,13 @@
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
+from blog.views import List_posts, Create_post, Delete_post, Update_post, search_note, Detail_post
 
-from blog.views import create_post_sports, post_economy, post_entertainment, post_health, create_post_health, create_post_entertainment, create_post_economy, post_sports, search_note
+# Nuevas URL:
 
-urlpatterns = [
-    path('Entretenimiento/', post_entertainment, name = 'post_entertainment'),
-    path('Economia/', post_economy, name = 'post_economy'),
-    path('Salud/', post_health, name = 'post_heatlh'),
-    path('Deportes/', post_sports, name = 'post_sports'),
-    path('Crear-Nota-Salud/', create_post_health, name = 'new_post_health'),
-    path('Crear-Nota-Entretenimiento/', create_post_entertainment, name = 'new_post_entertainment'),
-    path('Crear-Nota-Economia/', create_post_economy, name = 'new_post_economy'),
-    path('Crear-Nota-Deportes/', create_post_sports, name = 'new_post_sports'),
+urlpatterns =[
+    path('', List_posts.as_view(), name = 'list_posts'),
+    path('Crear-Nota/', Create_post.as_view(), name = 'create_post'),
+    path('Borrar-Noticia/<int:pk>/', Delete_post.as_view(), name = 'delete_post'),
+    path('Editar-Noticia/<int:pk>/', Update_post.as_view(), name = 'update_post'),
+    path('Leer-Noticia/<int:pk>/', Detail_post.as_view(), name = 'detail_post'),
     path('Buscar/', search_note, name = 'search_note'),
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

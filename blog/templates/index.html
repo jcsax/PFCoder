@@ -9,7 +9,7 @@ Inicio
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">Blog Infocoders</h1>
-            <p class="lead fw-normal text-white-50 mb-0">El lugar para estár al día.</p>
+            <p class="lead fw-normal text-white-50 mb-0">El sitio para estár al día.</p>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@ class="fw-normal text-center py 5">
 </h1>
 <div class="container px-8 px-lg-7 mt-5">
   <div class="row gx-4 gx-lg-5 row-cols-md-1 row-cols-md-1 row-cols-xl-25 justify-content-center">
-    {% for note in index_News %}
+    {% for note in notas %}
       <div class="col mb-5">
           <div class="card h-120">
             {% if note.image %}
@@ -31,7 +31,6 @@ class="fw-normal text-center py 5">
                   <div class="text-center">
                       <h3><class="fw-bolder">{{note.title}}<br></h3>
                       <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
-                      <h5>{{note.text}}</h5>
                       <br>
                       <a href="#" class="btn btn-secondary">Ver más</a>
                   </div>
@@ -52,5 +51,9 @@ class="fw-normal text-center py 5">
     <br>
     <br>
     <br>
+    <br>
+<br>
+<br><br>
+<br>
     <br>
   {% endblock %}

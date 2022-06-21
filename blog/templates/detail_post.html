@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Nota Completa
+{% endblock %}
+
+{% block content %}
+
+<h1 
+class="fw-bopld text-center py-5">
+Nota completa
+</h1>
+<div class="container px-8 px-lg-5 mt-5">
+        <div class="col mb-5">
+            <div class="card h-120">
+                {% if object.image %}
+                <img src="{{note.image.url}}" class="card-img-top"/>
+                {% endif %}
+                <div class="card-body p-6">
+                    <div class="text-center py-9">
+                        <h3 class="fw-bolder">{{object.title}}<br></h3>
+                        <p class="card-text"><small class="text-muted">Autor: {{object.author}}</small></p>
+                <br>
+            <p><h6 class="card-text">{{object.text}}</h6></p>
+            <br>
+            <a href="/Noticias/Editar-Noticia/{{note.id}}/" class="btn btn-secondary">Editar</a>
+            <a href="/Noticias/Borrar-Noticia/{{note.id}}/" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+{% endblock %}

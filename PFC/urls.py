@@ -18,7 +18,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from PFC.views import index, about_us, login_view, logout_view, register_view, bd
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),

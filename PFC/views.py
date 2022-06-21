@@ -7,25 +7,18 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from PFC.forms import User_registration_form
-from blog.models import Health, Sports, Economy, Entertainment
+from blog.models import Note
+
 
 
 def index(request):
-    print(request.user)
-    print(request.user.is_authenticated)
-    index_News = Health.objects.all(),  Sports.objects.all(), Economy.objects.all(), Entertainment.objects.all(),
-    context = {'index_News': index_News}
-    return render(request,'index.html', context=context)
+    return render(request, 'index.html')
 
 def bd(request):
-    bd_view = Health.objects.all(), Sports.objects.all(), Economy.objects.all(), Entertainment.objects.all(),
+    bd_view = Note.objects.all()
     context = {'bd_view': bd_view}
     return render(request,'bd.html', context=context)
 
-
-def sign_in(request):
-    return render(request, 'sign-in.html')
-    
 def about_us(request):
     return render(request, 'about_us.html')
 

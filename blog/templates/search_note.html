@@ -10,63 +10,23 @@ Resultado de busqueda
 class="fw-bopld text-center py-5">
 Noticias encontradas
 </h1>
-<div>
-      {% for note in entertainment %}
-      <div class="card mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            </div>
+<div class="container px-8 px-lg-7 mt-5">
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    {% for note in notas %}
+      <div class="col mb-5">
+          <div class="card h-120">
+            {% if note.image %}
+            <img class="card-img-top" src="{{note.image.url}}"/>
+            {% endif %}
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">{{note.title}}</h5>
-                <p class="card-text">{{note.text}}</p>
                 <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
+                <br>
+                <a href="/Noticias/Leer-Noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>
               </div>
             </div>
           </div>
         </div>
         {% endfor %}
-        {% for note in economy %}
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{note.title}}</h5>
-                  <p class="card-text">{{note.text}}</p>
-                  <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-          {% for note in health %}
-          <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{note.title}}</h5>
-                    <p class="card-text">{{note.text}}</p>
-                    <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-            {% for note in sports %}
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{note.title}}</h5>
-                  <p class="card-text">{{note.text}}</p>
-                  <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-</div>  
-    
 {% endblock %}
