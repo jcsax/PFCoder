@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
-{% load static%}
+
 {% block title %}
-Inicio
+Economia
 {% endblock %}
 
 {% block content %}
-<div>
-<img src="/media/blog_de_noticias.jpg" class="img-fluid" alt="...">
-</div>
+
 <h1 
 class="fw-bopld text-center py-5">
-Ultimas novedades
+Noticias sobre Economia
 </h1>
 <div class="container px-8 px-lg-7 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      {% for note in inicio %}
+      {% for note in economy %}
         <div class="col mb-5">
-            <div class="card h-40">
+            <div class="card h-120">
               {% if note.image %}
-              <img class="card-img-top" src="{{note.image.url}}"style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
+              <img class="card-img-top" src="{{note.image.url}}" style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
               {% endif %}
               <div class="col-md-8">
                 <div class="card-body">
@@ -28,9 +26,9 @@ Ultimas novedades
                   <br>
                   <a href="/Noticias/Leer-Noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>
                 </div>
-              </div>
             </div>
-          </div>
-          {% endfor %}
+        </div>
+    </div>
 
+{% endfor %}
 {% endblock %}

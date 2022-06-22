@@ -1,22 +1,20 @@
 {% extends 'base.html' %}
-{% load static%}
+
 {% block title %}
-Inicio
+Salud
 {% endblock %}
 
 {% block content %}
-<div>
-<img src="/media/blog_de_noticias.jpg" class="img-fluid" alt="...">
-</div>
+
 <h1 
 class="fw-bopld text-center py-5">
-Ultimas novedades
+Noticias sobre Salud
 </h1>
 <div class="container px-8 px-lg-7 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-      {% for note in inicio %}
+      {% for note in health %}
         <div class="col mb-5">
-            <div class="card h-40">
+            <div class="card h-120">
               {% if note.image %}
               <img class="card-img-top" src="{{note.image.url}}"style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
               {% endif %}
@@ -27,10 +25,9 @@ Ultimas novedades
                   <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
                   <br>
                   <a href="/Noticias/Leer-Noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}

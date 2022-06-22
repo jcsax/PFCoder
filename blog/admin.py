@@ -7,9 +7,10 @@ class NoteAdmin(admin.ModelAdmin):
     list_display = ["title", "author","publish_date","category", "id"]
     list_editable = ["author", "category"]
     search_fields = ["author","publish_date"]
+    list_display_links = ["title"]
     list_per_page = 5
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ["name", "description"]
+    list_display = ["name", "description", "id"]
     list_editable = ["description"]
     search_fields = ["name"]
     list_per_page = 5

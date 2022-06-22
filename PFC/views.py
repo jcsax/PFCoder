@@ -12,7 +12,8 @@ from blog.models import Note
 
 
 def index(request):
-    return render(request, 'index.html')
+    inicio = Note.objects.all().order_by('publish_date')[6:10]
+    return render(request, 'index.html', {'inicio': inicio})
 
 def bd(request):
     bd_view = Note.objects.all()

@@ -14,13 +14,14 @@ Noticias encontradas
   <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     {% for note in notas %}
       <div class="col mb-5">
-          <div class="card h-120">
+          <div class="card h-40">
             {% if note.image %}
-            <img class="card-img-top" src="{{note.image.url}}"/>
+            <img class="card-img-top" src="{{note.image.url}}"style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
             {% endif %}
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">{{note.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{note.subtitle}}</h6>
                 <p class="card-text"><small class="text-muted">Autor: {{note.author}}</small></p>
                 <br>
                 <a href="/Noticias/Leer-Noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>

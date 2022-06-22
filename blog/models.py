@@ -1,5 +1,7 @@
+from xmlrpc.client import Boolean
 from django.db.models import CharField, ImageField
 from django.db import models
+from django.forms import BooleanField
 from django.utils.timezone import now
 # Create your models here.
 

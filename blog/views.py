@@ -2,7 +2,7 @@ from turtle import title
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse
-from blog.models import Note
+from blog.models import Categoria, Note
 from blog.forms import Note_form
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
@@ -45,3 +45,26 @@ def search_note(request):
     notas = Note.objects.filter(title__icontains=request.GET['search'])
     context = {'notas': notas}
     return render(request, 'search_note.html', context = context)
+
+
+#Views con noticias filtradas por categorías:
+
+def entertainment_post(request):
+    entertainment = Note.objects.filter(category_id = 1)
+    context = {'entertainment' : entertainment}
+    return render(request, 'entertainment_post.html', context = context)
+
+def health_post(request):
+    health = Note.objects.filter(category_id = 2)
+    context = {'health' : health}
+    return render(request, 'health_post.html', context = context)
+
+def economy_post(request):
+    economy = Note.objects.filter(category_id = 3)
+    context = {'economy' : economy}
+    return render(request, 'economy_post.html', context = context)
+
+def sports_post(request):
+    sports = Note.objects.filter(category_id = 4)
+    context = {'sports' : sports}
+    return render(request, 'sports_post.html', context = context)
