@@ -8,6 +8,9 @@ Inicio
 <div>
 <img src="/media/blog_de_noticias.jpg" class="img-fluid" alt="...">
 </div>
+<br>
+<h2 class="fw-bopld">{{message}}</h2>
+
 <h1 
 class="fw-bopld text-center py-5">
 Ultimas novedades
@@ -16,9 +19,9 @@ Ultimas novedades
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       {% for note in inicio %}
         <div class="col mb-5">
-            <div class="card h-40">
+            <div class="card h-40" style="background-color:#e3ba84">
               {% if note.image %}
-              <img class="card-img-top" src="{{note.image.url}}"style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
+              <img class="img-fluid" src="{{note.image.url}}" style= "border-radius: 15%; border: 5px; width: 287px; height: 200px; position: relative;"/>
               {% endif %}
               <div class="col-md-8">
                 <div class="card-body">

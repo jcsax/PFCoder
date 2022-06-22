@@ -13,7 +13,7 @@ class Note(models.Model):
     text = models.TextField(blank=True)
     category = models.ForeignKey('Categoria', on_delete=models.CASCADE, related_name='blog')
     image = models.ImageField(upload_to='note_image', blank = True, null = True)
-
+    is_active = models.BooleanField(default=True, blank = True)
 
     class Meta:
         verbose_name = 'Nota'

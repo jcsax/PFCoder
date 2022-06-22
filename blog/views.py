@@ -41,6 +41,9 @@ class Update_post(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('detail_post', kwargs = {'pk':self.object.pk})
 
+
+#Buscador:
+
 def search_note(request):
     notas = Note.objects.filter(title__icontains=request.GET['search'])
     context = {'notas': notas}

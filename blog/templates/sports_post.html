@@ -14,9 +14,9 @@ Noticias sobre Deportes
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       {% for note in sports %}
         <div class="col mb-5">
-            <div class="card h-120">
+            <div class="card h-120" style="background-color:#e3ba84">
               {% if note.image %}
-              <img class="card-img-top" src="{{note.image.url}}"/>
+              <img class="card-img-top" src="{{note.image.url}}"style= "border-radius: 15%; border: 5px; width: 287px; height: 200px; position: relative;"/>
               {% endif %}
               <div class="col-md-8">
                 <div class="card-body">

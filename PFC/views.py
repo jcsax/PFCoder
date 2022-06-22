@@ -5,7 +5,6 @@ from django.shortcuts import render, redirect
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from PFC.forms import User_registration_form
 from blog.models import Note
 
@@ -34,8 +33,7 @@ def login_view(request):
             user = authenticate(username = username, password = password)
             if user is not None:
                 login(request, user)
-                context = {'message':f'Bienvenido {username}'}
-                return render(request, 'index.html', context = context)
+                return redirect('/index')
             else:
                 context = {'errors':'Tus datos son incorrectos!'}
                 form = AuthenticationForm()

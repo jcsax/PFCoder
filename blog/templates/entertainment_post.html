@@ -15,9 +15,9 @@ Noticias sobre Entretenimiento
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
       {% for note in entertainment %}
         <div class="col mb-5">
-            <div class="card h-120">
+            <div class="card h-120" style="background-color:#e3ba84">
               {% if note.image %}
-              <img class="card-img-top" src="{{note.image.url}}" style= "border: 5px; height: 200px; width: 200px; position: relative; left: 15%; top: 5%;"/>
+              <img class="card-img-top" src="{{note.image.url}}"style= "border-radius: 15%; border: 5px; width: 287px; height: 200px; position: relative;"/>
               {% endif %}
               <div class="col-md-8">
                 <div class="card-body">
