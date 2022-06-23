@@ -14,5 +14,6 @@ class CategoriaAdmin(admin.ModelAdmin):
     list_editable = ["description"]
     search_fields = ["name"]
     list_per_page = 5
+
 admin.site.register(Note, NoteAdmin)
 admin.site.register(Categoria, CategoriaAdmin)

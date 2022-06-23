@@ -24,8 +24,8 @@ Nota completa
             <p><h6 class="card-text">{{object.text}}</h6></p>
             <br>
             {% if request.user.is_authenticated %}
-            <a href="/Noticias/Editar-Noticia/{{note.id}}/" class="btn btn-success">Editar</a>
-            <a href="/Noticias/Borrar-Noticia/{{note.id}}/" class="btn btn-danger">Eliminar</a>
+            <a href="/noticias/editar-noticia/{{note.id}}/" class="btn btn-success">Editar</a>
+            <a href="/noticias/borrar-noticia/{{note.id}}/" class="btn btn-danger">Eliminar</a>
             {% endif %}
             <a href="/index/" class="btn btn-secondary">Ir a Inicio</a>
         </div>

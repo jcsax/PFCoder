@@ -8,9 +8,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('index/', index),
-    path('Noticias/', include('blog.urls')),
-    path('Cuenta/', include('Accounts.urls')),
-    path('about-us/', about_us),
-    path('bd/', bd, name = 'bd'),
+    path('noticias/', include('blog.urls')),
+    path('cuenta/', include('Accounts.urls')),
+    path('sobre-nosotros/', about_us),
+    path('todas-las-noticias/', bd, name = 'bd'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

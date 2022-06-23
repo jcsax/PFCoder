@@ -1,16 +1,9 @@
 from os import name
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
 
-class Users(AbstractBaseUser):
-    user = models.CharField
-    class Meta:
-        verbose_name = 'Usuario'
-        verbose_name_plural = 'Usuarios'
-    def __str__(self):
-        return self.name
+#Acá van los perfiles de usuario. Crear Model
 
-
+#Formulario de contacto:
 query_set = [
     [0, "Consulta"],
     [1, "Reclamo"],
@@ -22,6 +15,9 @@ class Contact(models.Model):
     query = models.IntegerField(choices=query_set)
     text = models.TextField(max_length=400)
     follow = models.BooleanField()
+    class Meta:
+        verbose_name = 'Contacto'
+        verbose_name_plural = 'Contactos'
 
     def __str__(self):
         return self.name
