@@ -8,9 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from Accounts.forms import User_registration_form, Contact_form
 from users.models import User_profile
 from django.contrib.auth.mixins import LoginRequiredMixin
-from users.mixins import Logged_Super_User_Mixin
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
-from django.urls import reverse
+
 
 
 
@@ -85,13 +83,3 @@ def contact_view(request):
     return render(request, 'contact_form.html', data)
 
 #Perfil de usuario
-#def perfil_view(request):
-    #lista = User_profile.objects.all()
-    #context = {'lista': lista}
-    #return render(request,'perfil_view.html', context=context)
-class Perfil_view(LoginRequiredMixin, UpdateView):
-    model = User_profile
-    template_name = 'perfil_view.html'
-    fields = '__all__'
-    def get_success_url(self):
-        return reverse('perfil_view', kwargs = {'pk':self.object.pk})

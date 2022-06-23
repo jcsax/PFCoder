@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Noticias
+Perfil
 {% endblock %}
 
 {% block content %}
@@ -10,13 +10,13 @@ Noticias
 <h1 
 class="fw-bopld text-center py-5"> Mi perfil
 </h1>
+
     <h6> Usuario: {{user}}</h6>
-    <h6> Nombre: {{name}}</h6>
-    <h6> Apellido: {{last_name}}</h6>
-    <h6> Email: {{email}}</h6>
-    <h6> Telefono: {{phone}}</h6>
-    <h6> Ciudad: {{city}}</h6>
-    <br>
+    <h6> Nombre: {{user.name}}</h6>
+    <h6> Apellido: {{user.last_name}}</h6>
+    <h6> Email: {{user.email}}</h6>
+    <h6> Telefono: {{user.phone}}</h6>
+    <h6> Ciudad: {{user.city}}</h6>
     <br>
     <br>
     <br>
