@@ -1,7 +1,11 @@
+from msilib.schema import Class
 from os import name
 from django.db import models
 
+
 #Acá van los perfiles de usuario. Crear Model
+
+
 
 #Formulario de contacto:
 query_set = [
