@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title %}
+Inicio
+{% endblock %}
+
+{% block content %}
+<div>
+<img src="/media/blog_de_noticias.jpg" class="img-fluid" alt="...">
+</div>
+<br>
+<br>
+<h2 class="fw-bopld text-center py-5">{{message}}.</h2>
+<h3 class="fw-bopld text-center">Enterate de las novedades en el <a class= "btn btn-secondary" href = "/index">inicio!</a></h3>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from Accounts.models import Contact
 
 #Creación de usuario:
 class User_registration_form(UserCreationForm):
@@ -12,3 +13,9 @@ class User_registration_form(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
         help_texts = {k:'' for k in fields}
+
+#Formulario de Contacto:
+class Contact_form(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'

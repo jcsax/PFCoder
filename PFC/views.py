@@ -1,13 +1,10 @@
-from datetime import datetime
-from multiprocessing import context
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from blog.models import Note
 
 
 #Inicio:
 def index(request):
-    inicio = Note.objects.all().order_by('publish_date')[6:10]
+    inicio = Note.objects.all().order_by('-publish_date')[:4]
     return render(request, 'index.html', {'inicio': inicio})
 #Todas las Noticias:
 def bd(request):

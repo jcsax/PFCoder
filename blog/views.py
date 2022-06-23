@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from blog.models import Categoria, Note
 from blog.forms import Note_form
 from django.contrib.auth.mixins import LoginRequiredMixin
+from users.mixins import Logged_Super_User_Mixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
 
@@ -27,7 +28,7 @@ class Detail_post(DetailView):
     template_name = 'detail_post.html'
 
 
-class Delete_post(LoginRequiredMixin, DeleteView):
+class Delete_post(Logged_Super_User_Mixin, DeleteView):
     model = Note
     template_name = 'delete_post.html'
     def get_success_url(self):

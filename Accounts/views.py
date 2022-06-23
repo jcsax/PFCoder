@@ -3,7 +3,7 @@ from multiprocessing import context
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from Accounts.forms import User_registration_form
+from Accounts.forms import User_registration_form, Contact_form
 
 
 #Modulo Login:
@@ -16,7 +16,8 @@ def login_view(request):
             user = authenticate(username = username, password = password)
             if user is not None:
                 login(request, user)
-                return redirect('/index')
+                context = {'message':f'Hola de nuevo {username}'}
+                return render(request, 'logged_up.html', context = context)
             else:
                 context = {'errors':'Tus datos son incorrectos!'}
                 form = AuthenticationForm()
@@ -43,7 +44,7 @@ def register_view(request):
             user = authenticate(username = username, password = password)
             login(request, user)
             context = {'message':f'Usuario creado correctamente, bienvenido {username}'}
-            return render(request, 'index.html', context = context)
+            return render(request, 'new_user.html', context = context)
         else:
             errors = form.errors
             form = User_registration_form()
@@ -58,3 +59,18 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     return redirect('/index')
+
+#Contact Form:
+def contact_view(request):
+    data = {
+        'contact_form': Contact_form()
+    }
+    if request.method == 'POST':
+        contact_full = Contact_form(data=request.POST)
+        if contact_full.is_valid():
+            contact_full.save()
+            data["message"] = "Contacto enviado"
+        else:
+            data['contact_form'] = contact_full
+
+    return render(request, 'contact_form.html', data)
