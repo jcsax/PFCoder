@@ -3,8 +3,8 @@ from django.db.models import CharField, ImageField
 from django.db import models
 from django.forms import BooleanField
 from django.utils.timezone import now
-# Create your models here.
 
+#Modelos:
 class Note(models.Model):
     title = models.CharField(max_length=100, blank=True, null=True)
     subtitle = models.CharField(max_length=100)
