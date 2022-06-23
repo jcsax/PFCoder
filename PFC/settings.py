@@ -47,6 +47,7 @@ THIRD_APPS = []
 MY_APPS =[
     'blog.apps.BlogConfig',
     'users',
+    'Accounts',
     ]
 
 INSTALLED_APPS = BASE_APPS + THIRD_APPS + MY_APPS
