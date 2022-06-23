@@ -19,7 +19,7 @@ class Note(models.Model):
         verbose_name = 'Nota'
         verbose_name_plural = 'Notas'
     def __str__(self):
-        return self.name
+        return self.title
 
 class Categoria(models.Model):
     name = models.CharField(max_length=50)
