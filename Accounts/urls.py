@@ -7,6 +7,6 @@ urlpatterns = [
     path('cerrar-sesion/', logout_view, name = 'logout'),
     path('registrarse/', register_view, name = 'register'),
     path('contacto/', contact_view, name = 'contact_form'),
-    path('perfil/', profile_view, name = 'profile_view'),
+    path('<int:pk>/', profile_view.as_view(), name = 'profile_view'),
     
 ]
