@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 #Mixin para super_user "admin":
 class Logged_Super_User_Mixin(object):
     def dispatch(self, request, *args, **kwargs):

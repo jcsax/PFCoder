@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Perfil
+{% endblock %}
+
+{% block content %}
+<h3 class="fw-bopld text-center text-success py-5">{{message}}</h3>
+{{ errors }}
+<h1 
+class="fw-bopld text-center py-5"> Hola {{user.username}} completá los datos a modificar:</h1>
+<div class="container">
+    <div class="row">
+    <div class="col">
+<form action="" class="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+    {{update_profile_form}}
+</table>
+<br>
+    <input type="submit" class="btn btn-success" value="Editar Perfil"></input>
+    <a class="btn btn-secondary" href = "/cuenta/perfil">Volver</a>
+</form>
+    </div>
+</div>
+{% endblock %}

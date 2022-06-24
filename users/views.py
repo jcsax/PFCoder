@@ -1,17 +1,15 @@
-from pyexpat import model
-from re import template
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib import messages
-from django.urls import reverse_lazy
-from users.models import User_profile
-from django.views import generic
-from django.views.generic import UpdateView
-# Create your views here.
+# from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.shortcuts import render, redirect
+# from django.urls import reverse, reverse_lazy
+# from django.contrib.auth.models import User
+# from users.models import User_profile
+# from users.forms import Update_profile_form
+# from django.views.generic import UpdateView
+# # Create your views here.
 
-class profile_view(generic.UpdateView):
-    model = User_profile
-    template_name = 'profile_view.html'
-    fields = '__all__'
-    success_url = reverse_lazy('perfil/')
-    
+# class Profile_view(LoginRequiredMixin, UpdateView):
+#     model = User_profile
+#     form_class = Update_profile_form
+#     template_name = 'profile_view.html'
+#     def get_success_url(self):
+#         return reverse('profile_view', kwargs={'username':self.object.name})

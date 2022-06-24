@@ -8,28 +8,19 @@ Perfil
 <br><br><br>
 {{message}}
 <h1 
-class="fw-bopld text-center py-5"> Mi perfil
-</h1>
-
-    <h6> Usuario: {{user}}</h6>
-    <h6> Nombre: {{user.name}}</h6>
-    <h6> Apellido: {{user.last_name}}</h6>
-    <h6> Email: {{user.email}}</h6>
-    <h6> Telefono: {{user.phone}}</h6>
-    <h6> Ciudad: {{user.city}}</h6>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  {% endblock %}
+class="fw-bopld text-center py-5"> Hola {{user.username}} este es tú perfil</h1>
+<div class="card mb-3" style="max-width: fit-content; max-height: fit-content; background-color:#d5e1e6">
+    <div class="row g-0">
+      <div class="col-md-4">
+    <img src="{{ user.profile.image.url }}" class="img-fluid" style="border-radius: 30%; border: 5px; height: 200px; width: 200px; position: relative; left: 5%; top: 2%;" alt="..."/>
+      </div>
+    <div class="col-md-8">
+        <div class="card-body">
+        <h5 class="card-title">{{user.username}}</h5>
+        <p class="card-text">No toma los import, hay que solucionar eso{{user.profile.last_name}} el problema es que se deforma todo también.</p>
+        <p class="card-text">Mar del Plata</p>
+            <a class="btn btn-secondary" href ="/cuenta/perfil/actualizar">Editar</a>
+        </div>
+      </div>
+    </div>
+{% endblock %}

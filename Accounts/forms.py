@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from Accounts.models import Contact
+from Accounts.models import Contact, Profile
 
 #Creación de usuario:
 class User_registration_form(UserCreationForm):
@@ -18,4 +18,15 @@ class User_registration_form(UserCreationForm):
 class Contact_form(forms.ModelForm):
     class Meta:
         model = Contact
+        fields = '__all__'
+
+#Formulario para actualizar perfil:
+class Update_profile_form(forms.ModelForm):
+    name = forms.CharField(label ='Nombre')
+    last_name = forms.CharField(label = 'Apellido')
+    description = forms.CharField(label = 'Acerca de mí')
+    city = forms.CharField(label = 'Ciudad')
+    image = forms.ImageField(label = 'Foto de perfil')
+    class Meta:
+        model = Profile
         fields = '__all__'

@@ -4,7 +4,7 @@ from blog.views import List_posts, Create_post, Delete_post, Update_post, search
 # Nuevas URL:
 
 urlpatterns =[
-    path('', List_posts.as_view(), name = 'list_posts'),
+    path('todas-las-noticias/', List_posts.as_view(), name = 'list_posts'),
     path('crear-nota/', Create_post.as_view(), name = 'create_post'),
     path('borrar-noticia/<int:pk>/', Delete_post.as_view(), name = 'delete_post'),
     path('editar-noticia/<int:pk>/', Update_post.as_view(), name = 'update_post'),
