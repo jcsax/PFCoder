@@ -4,6 +4,13 @@ from django.contrib.auth import authenticate, login, logout
 from Accounts.forms import User_registration_form, Contact_form, Update_profile_form
 from django.contrib.auth.decorators import login_required
 
+from Accounts.models import Profile
+from django.contrib.auth.mixins import LoginRequiredMixin
+from users.mixins import Logged_Super_User_Mixin
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.urls import reverse
+from django.contrib import messages
+
 #Modulo Login:
 def login_view(request):
     if request.method == 'POST':
@@ -87,7 +94,7 @@ def Update_profile_view(request):
     if request.method == 'POST':
         update_profile = Update_profile_form(data=request.POST)
         print('1')
-        if update_profile.is_valid():
+        if Update_profile_form.is_valid():
             print('2')
             update_profile.save()
             print('3')
@@ -96,22 +103,17 @@ def Update_profile_view(request):
             data['update_profile_form'] = update_profile
     return render(request, 'edit_profile_view.html', data)
 
+class Update_profile(LoginRequiredMixin, UpdateView):
+    model = Profile
+    form = Update_profile_form
+    template_name = 'edit_profile_view.html'
+    fields = '__all__'
+    def get_success_url(self):
+        messages = f'{self.model.__name__} actualizado.'
+        return reverse('profile_view')
+
 
 #Perfiles por Views:
-
-#User = get_user_model
-##Perfil de usuario:
-# class Profile_view(LoginRequiredMixin, View):
-#     def get(self, request, username,*args, **kwargs):
-#         user = get_object_or_404(User, username=username)
-#         profile = Profile.objects.get(user=user)
-#         context = {
-#             'user': user, 
-#             'profile': profile
-#         }
-#         return render(request, 'profile_view.html', context)
-
-
 #Editar perfil de usuario:
 # class Update_profile_view(LoginRequiredMixin, UpdateView):
 #     model = User

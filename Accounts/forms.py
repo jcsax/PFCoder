@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from Accounts.models import Contact, Profile
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 #Creación de usuario:
 class User_registration_form(UserCreationForm):
@@ -22,11 +24,6 @@ class Contact_form(forms.ModelForm):
 
 #Formulario para actualizar perfil:
 class Update_profile_form(forms.ModelForm):
-    name = forms.CharField(label ='Nombre')
-    last_name = forms.CharField(label = 'Apellido')
-    description = forms.CharField(label = 'Acerca de mí')
-    city = forms.CharField(label = 'Ciudad')
-    image = forms.ImageField(label = 'Foto de perfil')
     class Meta:
         model = Profile
         fields = '__all__'
