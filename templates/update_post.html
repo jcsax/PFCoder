@@ -6,19 +6,32 @@ Actualizar Nota
 
 {% block content %}
 
-    {% if form %}
-        <h2 class="fw-bopld text-center py-5">Complete los campos a actualizar</h2>
-        <div class="container px-8 px-lg-7 mt-5">
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <table>
-                {{form.as_table}}
-            </table>
-            <br>
-            <input class="btn btn-primary" type="submit" , value="Editar">
-            <a class="btn btn-secondary" href = "/noticias/todas-las-noticias/">Cancelar</a>
-        </form>
-    </div>
+{% if form %}
+<h2 class="fw-bopld text-center py-5">Complete los campos a actualizar</h2>
+<div class="container px-8 px-lg-7 mt-5">
+    <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+        <script>
+            labels = document.getElementsByTagName('label');
+            for (var j = 0; j < labels.length; j++) {   
+                if (labels[j].textContent == "Title:") labels[j].textContent ="Titulo";
+                if (labels[j].textContent == "Subtitle:") labels[j].textContent ="Subtitulo";
+                if (labels[j].textContent == "Author:") labels[j].textContent ="Autor";
+                if (labels[j].textContent == "Publish date:") labels[j].textContent = "Fecha de Publicación";
+                if (labels[j].textContent == "Text:") labels[j].textContent ="Cuerpo de la Nota";
+                if (labels[j].textContent == "Category:") labels[j].textContent ="Categoria";
+                if (labels[j].textContent == "Image:") labels[j].textContent ="Imagen";
+                if (labels[j].textContent == "Is active:") labels[j].textContent ="Activo";
+                };
+        </script>
+        </table>
+        <br>
+        <input class="btn btn-primary" type="submit" , value="Editar">
+        <a class="btn btn-secondary" href = "/noticias/todas-las-noticias/">Cancelar</a>
+    </form>
+</div>
 </div>
     {% endif %}
 </div>

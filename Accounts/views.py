@@ -89,11 +89,7 @@ class Update_profile(LoginRequiredMixin, UpdateView):
     model = Profile
     form = Profile_form
     template_name = 'edit_profile_view.html'
-    fields = '__all__'
-    widgets = {'user':HiddenInput()}
-        
+    fields = ['name', 'last_name', 'description', 'city', 'image']
     def get_success_url(self):
-        message = f'{self.model.__name__} actualizado.'
         return reverse('profile_view')
-        
 

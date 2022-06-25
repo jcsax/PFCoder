@@ -22,7 +22,7 @@ class Contact_form(forms.ModelForm):
         model = Contact
         fields = '__all__'
 
-# #Formulario para actualizar perfil:
+#Formulario para actualizar perfil:
 class Profile_form(forms.ModelForm):
     class Meta:
         model = Profile
