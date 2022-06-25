@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Perfil
+{% endblock %}
+
+{% block content %}
+<h1 
+class="fw-bopld text-center py-5"> Hola {{user.username}} este es tú perfil</h1>
+<div class="m-5 p-1">
+    <div class="card mx-auto" style="width: 500px; background-color:#d5e1e6">
+      <img src="{{ user.profile.image.url }}" class="card-img-top" style="border-radius: 50%; border: 5px; height: 200px; width: 200px; position: relative; left: 30%; top: 1%;" alt="..."/>
+      <div class="card-body">
+        <h4 class="card-title">{{user.profile.name}} {{user.profile.last_name}}</h4>
+        <br>
+        <h5 class="card-text">Acerca de mí: {{user.profile.description}}</h5>
+        <div class="card-footer text-muted"> Soy de: {{user.profile.city}}
+        </div>
+        </div>
+          <a class="btn btn-secondary" href ="/cuenta/perfil/actualizar/view/{{user.profile.id}}">Editar</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
