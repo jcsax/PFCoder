@@ -37,7 +37,7 @@ class List_posts(ListView):
     queryset = Note.objects.all()
 #Buscador:
 def search_note(request):
-    notas = Note.objects.filter(title__icontains=request.GET['search'])
+    notas = Note.objects.filter(title__icontains=request.GET['search'])  or Note.objects.filter(text__icontains=request.GET['search'])
     context = {'notas': notas}
     return render(request, 'search_note.html', context = context)
 
