@@ -1,7 +1,7 @@
 from django.urls import path
-from blog.views import List_posts, Create_post, Delete_post, Update_post, search_note, Detail_post, entertainment_post, economy_post, sports_post, health_post
-
-# Nuevas URL:
+from blog.views import List_posts, Create_post, Delete_post, Update_post, Detail_post, \
+    search_note, \
+    entertainment_post, economy_post, sports_post, health_post
 
 urlpatterns =[
     path('todas-las-noticias/', List_posts.as_view(), name = 'list_posts'),

@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from blog.models import Note
 
-
 #Inicio:
 def index(request):
     inicio = Note.objects.all().order_by('-publish_date')[:4]

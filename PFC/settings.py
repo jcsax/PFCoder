@@ -46,7 +46,6 @@ THIRD_APPS = []
 
 MY_APPS =[
     'blog.apps.BlogConfig',
-    'users.apps.UsersConfig',
     'Accounts.apps.AccountsConfig',
     ]
 

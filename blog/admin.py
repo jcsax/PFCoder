@@ -1,4 +1,3 @@
-from msilib.schema import Class
 from django.contrib import admin
 from blog.models import Note, Categoria
 

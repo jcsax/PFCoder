@@ -2,12 +2,10 @@ from django.shortcuts import render
 from django.urls import reverse
 from blog.models import Note
 from django.contrib.auth.mixins import LoginRequiredMixin
-from users.mixins import Logged_Super_User_Mixin
+from Accounts.mixins import Logged_Super_User_Mixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
-
-# Nuevas Views:
-
+#Views Manejo de Notas
 class Create_post(LoginRequiredMixin, CreateView):
     model = Note
     template_name = 'create_post.html'
@@ -44,7 +42,6 @@ def search_note(request):
     return render(request, 'search_note.html', context = context)
 
 #Views con noticias filtradas por categorías:
-
 def entertainment_post(request):
     entertainment = Note.objects.filter(category_id = 1)
     context = {'entertainment' : entertainment}
