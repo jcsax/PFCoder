@@ -13,11 +13,11 @@ class="fw-bopld text-center py-5"> Hola {{user.username}} completá los datos a 
 <form action="" method="POST" enctype="multipart/form-data">
 {% csrf_token %}
 <table>
-    {{form.as_table}}
+    {{ form.as_table }}
     <script>
         labels = document.getElementsByTagName('label');
         for (var j = 0; j < labels.length; j++) {   
-            if (labels[j].textContent == "User:") labels[j].textContent ="Nombre de Usuario";
+            if (labels[j].textContent == "User:") labels[j].textContent ="Usuario";
             if (labels[j].textContent == "Name:") labels[j].textContent ="Nombre";
             if (labels[j].textContent == "Last name:") labels[j].textContent ="Apellido";
             if (labels[j].textContent == "Description:") labels[j].textContent = "Descripcion";

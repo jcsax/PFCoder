@@ -9,6 +9,8 @@ from Accounts.models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 from django.urls import reverse
+from django.forms import HiddenInput
+        
 
 #Modulo Login:
 def login_view(request):
@@ -88,7 +90,10 @@ class Update_profile(LoginRequiredMixin, UpdateView):
     form = Profile_form
     template_name = 'edit_profile_view.html'
     fields = '__all__'
+    widgets = {'user':HiddenInput()}
+        
     def get_success_url(self):
         message = f'{self.model.__name__} actualizado.'
         return reverse('profile_view')
+        
 

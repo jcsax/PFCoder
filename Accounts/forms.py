@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from Accounts.models import Contact, Profile
+from django.forms import HiddenInput
 
 
 #Creación de usuario:
@@ -25,4 +26,4 @@ class Contact_form(forms.ModelForm):
 class Profile_form(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('name', 'last_name', 'description', 'city', 'image')
+        fields = '__all__'

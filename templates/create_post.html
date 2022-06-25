@@ -14,7 +14,21 @@ Publicar Nota
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
-            {{form.as_table}}
+            
+        {{form.as_table}}
+        <script>
+            labels = document.getElementsByTagName('label');
+            for (var j = 0; j < labels.length; j++) {   
+                if (labels[j].textContent == "Title:") labels[j].textContent ="Titulo";
+                if (labels[j].textContent == "Subtitle:") labels[j].textContent ="Subtitulo";
+                if (labels[j].textContent == "Author:") labels[j].textContent ="Autor";
+                if (labels[j].textContent == "Publish date:") labels[j].textContent = "Fecha de Publicación";
+                if (labels[j].textContent == "Text:") labels[j].textContent ="Cuerpo de la Nota";
+                if (labels[j].textContent == "Category:") labels[j].textContent ="Categoria";
+                if (labels[j].textContent == "Image:") labels[j].textContent ="Imagen";
+                if (labels[j].textContent == "Is active:") labels[j].textContent ="Activo";
+                };
+    </script>
         </table>
         <br>
         <input type="submit" class="btn btn-secondary" value="Enviar">
