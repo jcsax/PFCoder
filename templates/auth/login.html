@@ -5,9 +5,9 @@ Login
 {% endblock %}
 
 {% block content %}
-    <h2 style="margin-left: 35rem;">Complete los campos para iniciar sesion</h2>
-    <h3>{{errors}}</h3>
-    <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
+<h3>{{errors}}</h3>
+    <h2 class="fw-bopld text-center py-5">Complete los campos para iniciar sesion</h2>
+    <form action="" method="POST" style= "position: relative; left: 20%" >
         {% csrf_token %}
         <table>
             {{form.as_table}}
