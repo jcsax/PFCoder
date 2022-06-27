@@ -6,6 +6,8 @@ Proyecto Final Coderhouse desarrollado por:
 
 -Juan Francisco Laborde: Correcciones y mejoras en algunas funciones. Creación de contenido para las notas.
 
+link al video: https://youtu.be/gCDZPoakaUM
+
 Estamos utilizando Django 4.0.4 y plantillas de bootstrap 5.2 en el requeriments.txt pueden ver las librerías instaladas.
 
 La página se pensó como un blog de noticias: 
