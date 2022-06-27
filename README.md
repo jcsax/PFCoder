@@ -8,6 +8,11 @@ Proyecto Final Coderhouse desarrollado por:
 
 link al video: https://youtu.be/gCDZPoakaUM
 
+Usuarios: ---- Contraseñas:
+ admin    ---- 12345asd (Dios)
+ dueño    ---- 12345Asd1 (en la página puede eliminar post, en el admin tiene permisos especiales, pero no todos)
+ Joan     ---- 12345Asd1 (usuario común) Cualquier usuario nuevo se le crea el perfil automaticamente.
+
 Estamos utilizando Django 4.0.4 y plantillas de bootstrap 5.2 en el requeriments.txt pueden ver las librerías instaladas.
 
 La página se pensó como un blog de noticias: 
